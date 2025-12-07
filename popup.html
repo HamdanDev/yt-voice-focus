@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <title>YouTube Voice Focus</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      width: 320px;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+      color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .header {
+      text-align: center;
+      width: 100%;
+    }
+
+    .header h1 {
+      font-size: 22px;
+      font-weight: 600;
+      margin-bottom: 4px;
+      background: linear-gradient(135deg, #ff006e, #8338ec);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .header p {
+      font-size: 12px;
+      color: #b0b0b0;
+    }
+
+    .status-box {
+      width: 100%;
+      padding: 12px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 100, 200, 0.3);
+      border-radius: 6px;
+      text-align: center;
+      backdrop-filter: blur(10px);
+    }
+
+    .status-indicator {
+      display: inline-block;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      margin-right: 6px;
+      background-color: #888;
+      transition: all 0.3s ease;
+    }
+
+    .status-indicator.active {
+      background-color: #00ff41;
+      box-shadow: 0 0 10px #00ff41;
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% {
+        box-shadow: 0 0 10px #00ff41;
+      }
+      50% {
+        box-shadow: 0 0 20px #00ff41;
+      }
+    }
+
+    .status-text {
+      font-size: 13px;
+      font-weight: 500;
+    }
+
+    #toggle {
+      width: 100%;
+      padding: 12px 20px;
+      font-size: 15px;
+      font-weight: 600;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      background: linear-gradient(135deg, #ff006e, #8338ec);
+      color: white;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      box-shadow: 0 4px 15px rgba(255, 0, 110, 0.3);
+    }
+
+    #toggle:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(255, 0, 110, 0.5);
+    }
+
+    #toggle:active {
+      transform: translateY(0);
+    }
+
+    .info-section {
+      width: 100%;
+      padding: 12px;
+      background: rgba(131, 56, 236, 0.1);
+      border-left: 3px solid #8338ec;
+      border-radius: 4px;
+      font-size: 12px;
+      color: #d0d0d0;
+      line-height: 1.5;
+    }
+
+    .info-section strong {
+      color: #ff006e;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>🎵 Voice Focus</h1>
+      <p>YouTube Audio Enhancement</p>
+    </div>
+
+    <div class="status-box">
+      <span class="status-indicator" id="indicator"></span>
+      <span class="status-text" id="statusText">Status: Disabled</span>
+    </div>
+
+    <button id="toggle">Enable</button>
+
+    <div style="width: 100%; padding-top: 8px; border-top: 1px solid rgba(255, 255, 255, 0.1); margin-top: 12px;">
+      <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px;">
+        <input type="checkbox" id="deesser" style="width: 18px; height: 18px; cursor: pointer;">
+        <label for="deesser" style="cursor: pointer; font-size: 13px; font-weight: 500;">De-Esser</label>
+      </div>
+      <div class="info-section" style="margin: 0 0 12px 0; font-size: 11px;">
+        Reduces harsh sibilant sounds (S, T, SH).
+      </div>
+
+      <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px;">
+        <input type="checkbox" id="reverb" style="width: 18px; height: 18px; cursor: pointer;">
+        <label for="reverb" style="cursor: pointer; font-size: 13px; font-weight: 500;">Reverb</label>
+      </div>
+      <div class="info-section" style="margin: 0 0 12px 0; font-size: 11px;">
+        Adds spacious reverb for room-like audio ambience.
+      </div>
+
+      <div style="margin-bottom: 8px;">
+        <label for="volumeSlider" style="font-size: 13px; font-weight: 500;">Volume Boost</label>
+      </div>
+      <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px;">
+        <input type="range" id="volumeSlider" min="1" max="300" value="100" style="flex: 1; cursor: pointer;">
+        <span id="volumeValue" style="font-size: 12px; color: #00ff41; font-weight: 500; min-width: 35px;">100%</span>
+      </div>
+      <div class="info-section" style="margin: 0; font-size: 11px;">
+        Increases volume for videos with lower audio levels.
+      </div>
+    </div>
+
+    <div class="info-section">
+      <strong>How it works:</strong> Reduces background music while enhancing voice clarity. Perfect for tutorials, podcasts, and vlogs.
+    </div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
