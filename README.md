@@ -1,5 +1,8 @@
 # 🎵 YouTube Voice Focus
 
+<img width="481" height="898" alt="image" src="https://github.com/user-attachments/assets/81aa8a64-86ba-404a-b573-42de3f8d2d3e" />
+
+
 A powerful Chrome extension that reduces background music and enhances voice clarity on YouTube videos. Perfect for tutorials, podcasts, vlogs, and any content where you need to hear the speaker clearly.
 
 ## Features
