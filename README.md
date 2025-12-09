@@ -185,6 +185,10 @@ Found a bug or have a suggestion? Feel free to report it!
 
 This extension is provided as-is for personal use.
 
+## Credits
+
+**Icon Design:** [Afif Fudin](https://www.flaticon.com/authors/afif-fudin) - [Enable sound icons from Flaticon](https://www.flaticon.com/free-icons/enable-sound)
+
 ## Support
 
 For issues or questions, check the Chrome Web Store page or verify all files are present in the extension folder.
