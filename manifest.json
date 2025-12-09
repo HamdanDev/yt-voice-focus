@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "name": "YouTube Voice Focus",
   "version": "1.0",
-  "description": "Focus on YouTube with voice control",
+  "description": "Reduce background music and enhance voice clarity on YouTube videos. GitHub: https://github.com/HamdanDev/yt-voice-focus",
   "permissions": [
     "scripting",
     "tabs"
